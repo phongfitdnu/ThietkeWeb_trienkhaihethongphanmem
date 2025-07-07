@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid & Flexbox Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* Header */
+        header {
+            width: 100%;
+            background: #f26507;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        /* View Mode Buttons */
+        .view-buttons {
+            margin-top: 60px;
+            display: flex;
+            gap: 10px;
+        }
+        .view-buttons button {
+            padding: 10px 15px;
+            border: none;
+            background: #2903e8;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .view-buttons button:hover {
+            background: #555;
+        }
+        
+        /* Container */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 80px 20px 20px; /* Adjusted for fixed header */
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        /* Card */
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 100px 10px 20px;
+            }
+            header {
+                font-size: 18px;
+                padding: 10px 0;
+            }
+            .card {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                font-size: 16px;
+            }
+            .card h2 {
+                font-size: 18px;
+            }
+            .card p {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        function setView(mode) {
+            const container = document.querySelector('.container');
+            if (mode === 'desktop') {
+                container.style.gridTemplateColumns = 'repeat(3, 1fr)';
+            } else if (mode === 'tablet') {
+                container.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            } else {
+                container.style.gridTemplateColumns = '1fr';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Responsive Grid & Flexbox</h1>
+    </header>
+    
+    <div class="view-buttons">
+        <button onclick="setView('desktop')">Desktop View</button>
+        <button onclick="setView('tablet')">Tablet View</button>
+        <button onclick="setView('mobile')">Mobile View</button>
+    </div>
+    
+    <section class="container">
+        <div class="card">
+            <img src="./images1.jfif" alt="Placeholder Image">
+            <h2>Card 1</h2>
+            <p>Some description text.</p>
+        </div>
+        <div class="card">
+            <img src="./images2.jfif" alt="Placeholder Image">
+            <h2>Card 2</h2>
+            <p>Some description text.</p>
+        </div>
+        <div class="card">
+            <img src="./images3.jfif" alt="Placeholder Image">
+            <h2>Card 3</h2>
+            <p>Some description text.</p>
+        </div>
+    </section>
+</body>
+</html>

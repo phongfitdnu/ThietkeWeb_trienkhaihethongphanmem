@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form ví dụ xuất ra Word</title>
+</head>
+<body>
+  <h2>Thông tin đăng ký</h2>
+
+  <form>
+    <p><strong>Họ và tên:</strong><br>
+      <input type="text" name="hoten">
+    </p>
+
+    <p><strong>Email:</strong><br>
+      <input type="email" name="email">
+    </p>
+
+    <p><strong>Mật khẩu:</strong><br>
+      <input type="password" name="matkhau">
+    </p>
+
+    <p><strong>Giới tính:</strong><br>
+      <input type="radio" name="gioitinh" value="nam"> Nam
+      <input type="radio" name="gioitinh" value="nu"> Nữ
+    </p>
+
+    <p><strong>Sở thích:</strong><br>
+      <input type="checkbox" name="sothich" value="doc_sach"> Đọc sách
+      <input type="checkbox" name="sothich" value="du_lich"> Du lịch
+      <input type="checkbox" name="sothich" value="am_nhac"> Âm nhạc
+    </p>
+
+    <p><strong>Quốc gia:</strong><br>
+      <select name="quocgia">
+        <option value="vn">Việt Nam</option>
+        <option value="us">Hoa Kỳ</option>
+        <option value="jp">Nhật Bản</option>
+      </select>
+    </p>
+
+    <p><strong>Ghi chú thêm:</strong><br>
+      <textarea name="ghichu" rows="4" cols="50"></textarea>
+    </p>
+
+    <p>
+      <input type="submit" value="Gửi">
+      <input type="reset" value="Xóa">
+    </p>
+  </form>
+</body>
+</html>

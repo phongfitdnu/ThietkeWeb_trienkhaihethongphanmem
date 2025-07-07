@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài viết</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* 2. ID Selector: Chọn phần tử có id="header" */
+    #header {
+        background-color: #333333;
+        color: #166828;
+        padding: 20px;
+    }
+    
+    /* 3. Class Selector: Chọn các phần tử có class "title" */
+    .title {
+        font-size: 2.5em;
+        text-align: center;
+    }
+    /* 4. Descendant Selector: Chọn link bên trong nav > ul > li */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+/* 4.1. Pseudo-class: Hover cho link */
+nav ul li a:hover {
+    background-color: #555;
+}
+/* 5. Class Selector cho phần nội dung bài viết */
+.content article {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    border: 1px solid #ddd;
+}
+/* 6. Attribute Selector: Chọn đoạn văn có data-custom="important" */
+p[data-custom="important"] {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* 7. Pseudo-element: Định dạng chữ cái đầu tiên của đoạn văn mô tả */
+p.description::first-letter {
+    font-size: 2em;
+    color: #3498db;
+}
+footer{text-align: center;}
+
+</style>
+</head>
+<body>
+    <header id="header">
+        <h1 class="title">Trang web học CSS Selectors</h1>
+        <nav>
+            <ul>
+                <li><a href="#Home"class="nav-link">Home</a></li>
+                <li><a href="#About" class="nav-link">About</a></li>
+                <li><a href="#Contact"class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Phần nội dung với các bài viết -->
+     <section class="content">
+<article>
+<h1>Bài viết 1</h1>
+<p class="description">Đây là đoạn giới thiệu cho bài viết 1.</p>
+<p class="important">Nội dung bài viết 1 được đánh dấu là quan trọng.</p>
+</article>
+<article>
+    <h1>Bài viết 2</h1>
+    <p class="description">Đây là đoạn giới thiệu cho bài viết 2.</p>
+    <p class="important">Nội dung bài viết 1 được đánh dấu là quan trọng.</p>
+    </article>
+
+     </section>
+     <footer>
+        <p>© 2025 - Tất cả các quyền được bảo lưu.</p>
+     </footer>
+</body>
+</html>

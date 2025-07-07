@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiết kế Responsive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .header {
+            padding: 20px;
+            background: #007bff;
+            color: white;
+            border-radius: 10px 10px 0 0;
+            font-size: 1.5em;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .box {
+            width: 100%;
+            max-width: 300px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Điện thoại (màn hình nhỏ dưới 600px) */
+        @media (max-width: 600px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Tablet (600px - 1024px) */
+        @media (min-width: 600px) and (max-width: 1024px) {
+            .content {
+                justify-content: space-around;
+            }
+            .box {
+                width: 45%;
+            }
+        }
+
+        /* Laptop và máy tính để bàn (trên 1024px) */
+        @media (min-width: 1024px) {
+            .content {
+                justify-content: space-between;
+            }
+            .box {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Thiết kế Responsive</h1>
+        </div>
+        <div class="content">
+            <div class="box">Trang chủ</div>
+            <div class="box">Giới thiệu</div>
+            <div class="box">Sản phẩm</div>
+            <div class="box">Khuyến mại</div>
+        </div>
+    </div>
+</body>
+</html>

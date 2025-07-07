@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký Người Dùng</title>
+</head>
+<body>
+
+    <h2>Đăng Ký Người Dùng</h2>
+
+    <form action="submit_form.php" method="post">
+        <fieldset>
+            <legend>Thông tin cá nhân</legend>
+
+            <label for="fullname">Họ và tên:</label>
+            <input type="text" id="fullname" name="fullname" required>
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password" name="password" minlength="6" required>
+            <br><br>
+
+            <label>Giới tính:</label>
+            <input type="radio" name="gender" value="Nam"> Nam
+            <input type="radio" name="gender" value="Nữ"> Nữ
+            <input type="radio" name="gender" value="Khác"> Khác
+            <br><br>
+
+            <label for="dob">Ngày sinh:</label>
+            <input type="date" id="dob" name="dob">
+            <br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Thông tin bổ sung</legend>
+
+            <label>Sở thích:</label>
+            <input type="checkbox" name="hobby" value="reading"> Đọc sách
+            <input type="checkbox" name="hobby" value="travel"> Du lịch
+            <input type="checkbox" name="hobby" value="music"> Nghe nhạc
+            <input type="checkbox" name="hobby" value="sports"> Chơi thể thao
+            <br><br>
+
+            <label for="country">Quốc gia:</label>
+            <select id="country" name="country">
+                <option value="vietnam">Việt Nam</option>
+                <option value="usa">Mỹ</option>
+                <option value="uk">Anh</option>
+                <option value="japan">Nhật Bản</option>
+                <option value="korea">Hàn Quốc</option>
+            </select>
+            <br><br>
+
+            <label for="bio">Giới thiệu bản thân:</label><br>
+            <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Viết đôi điều về bạn..."></textarea>
+            <br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Xác nhận</legend>
+
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">Tôi đồng ý với điều khoản sử dụng</label>
+            <br><br>
+
+            <input type="submit" value="Gửi đăng ký">
+            <input type="reset" value="Nhập lại">
+        </fieldset>
+    </form>
+
+</body>
+</html>
